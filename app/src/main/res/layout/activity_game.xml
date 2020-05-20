@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="viewmodel" type="com.example.memorymatchinggame.viewmodel.CardsViewModel"/>
+    </data>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".GameActivity"
+        android:background="@color/almostWhite">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/currentScore"
+                android:text="@{Integer.toString(viewmodel.score) ?? `Loading`}"
+                android:textSize="20sp"
+                android:textColor="@color/purpleBackground"
+                android:layout_gravity="center"
+                android:paddingTop="20dp"
+                android:paddingBottom="5dp"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Shuffle"
+                android:id="@+id/shuffleBtn"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="50dp"
+                android:onClick="@{() -> viewmodel.randomize()}"/>
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/grid"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="20dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"/>
+
+    </LinearLayout>
+</layout>

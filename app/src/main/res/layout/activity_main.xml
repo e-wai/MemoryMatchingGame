@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/purpleBackground"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/welcome_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome to the game!"
+        android:textColor="@color/almostWhite"
+        android:textSize="20sp"/>
+    <TextView
+        android:id="@+id/start_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="40dp"
+        android:text="Whenever you're ready..."
+        android:textColor="@color/almostWhite"
+        android:textSize="20sp"/>
+    <Button
+        android:id="@+id/newGameEasyBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Easy"
+        android:backgroundTint="@color/almostWhite"
+        android:textColor="@color/purpleBackground"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/easy_mode_info"
+        android:textColor="@color/almostWhite"
+        android:textSize="14sp"
+        android:paddingBottom="20dp"/>
+    <Button
+        android:id="@+id/newGameHardBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hard"
+        android:backgroundTint="@color/almostWhite"
+        android:textColor="@color/purpleBackground"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hard_mode_info"
+        android:textColor="@color/almostWhite"
+        android:textSize="14sp"/>
+
+</LinearLayout>

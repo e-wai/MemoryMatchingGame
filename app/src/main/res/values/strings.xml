@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">MemoryMatchingGame</string>
+    <string name="congratulatory_message">Congratulations!\nWe\'re proud of you :)</string>
+    <string name="easy_mode_info">2 cards per match</string>
+    <string name="hard_mode_info">3 cards per match</string>
+</resources>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    android:gravity="center">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text= "@string/congratulatory_message"
+        android:textSize="20dp"
+        android:textColor="@color/almostWhite"
+        android:paddingBottom="20sp"/>
+    <Button
+        android:id="@+id/returnToHomeBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Return Home"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:background="@color/almostWhite"
+        android:textColor="@color/colorPrimaryDark"/>
+
+</LinearLayout>
