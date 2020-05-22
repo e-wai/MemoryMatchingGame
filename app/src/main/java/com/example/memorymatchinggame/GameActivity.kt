@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import android.content.res.Resources
 import android.os.Bundle
+import android.util.DisplayMetrics
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
@@ -47,11 +48,13 @@ class GameActivity : AppCompatActivity(), CardAdapter.OnCardClickListener {
         grid = findViewById(R.id.grid)
 
         supportActionBar?.hide()
+    }
 
-        //TODO: check this
-        val width: Float = Resources.getSystem().displayMetrics.heightPixels / Resources.getSystem().displayMetrics.density
-        println("This is the $width")
-        grid.layoutManager = GridLayoutManager(this, (width / 150).toInt())
+    override fun onStart() {
+        super.onStart()
+        val widthDp: Float = Resources.getSystem().displayMetrics.widthPixels / Resources.getSystem().displayMetrics.density
+        val columns = (widthDp / 80).toInt()
+        grid.layoutManager = GridLayoutManager(this, columns)
     }
 
     fun gameCompleted(result: Int) {

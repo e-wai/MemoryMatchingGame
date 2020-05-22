@@ -51,8 +51,7 @@ class CardsViewModel: ViewModel() {
                             tmp.add(tmp[i].copy())
                         }
                     } else {
-                        tmp = received.products.subList(0, 6).toMutableList()
-                        for (i in 0 until 6)
+                        for (i in 0 until 10)
                         {
                             tmp.add(tmp[i].copy())
                             tmp.add(tmp[i].copy())
