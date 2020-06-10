@@ -36,9 +36,9 @@ class GameActivity : AppCompatActivity(), CardAdapter.OnCardClickListener {
         model.getCards().observe(this, Observer<List<Card>> { cards ->
             grid.adapter = CardAdapter(this@GameActivity, cards, this)
         })
-        model.getStatus().observe(this, Observer<Int> {
-            if (it != 0) {
-                gameCompleted(it)
+        model.getStatus().observe(this, Observer<Int> {status ->
+            if (status != 0) {
+                gameCompleted(status)
             }
         })
 
@@ -57,6 +57,16 @@ class GameActivity : AppCompatActivity(), CardAdapter.OnCardClickListener {
         grid.layoutManager = GridLayoutManager(this, columns)
     }
 
+    override fun onResume() {
+        super.onResume()
+        model.resumeTimer(model._time?.value ?: 60)
+    }
+
+    override fun onPause() {
+        super.onPause()
+        model.pauseTimer()
+    }
+
     fun gameCompleted(result: Int) {
         when(result) {
             1 -> {
@@ -71,6 +81,13 @@ class GameActivity : AppCompatActivity(), CardAdapter.OnCardClickListener {
                     putExtra(GAME_RESULT, "ERROR RETRIEVING FROM NETWORK")
                 }
                 setResult(Activity.RESULT_CANCELED, intent)
+                finish()
+            }
+            3 -> {
+                val intent = Intent().apply {
+                    putExtra(GAME_RESULT, "LOST")
+                }
+                setResult(Activity.RESULT_OK, intent)
                 finish()
             }
         }

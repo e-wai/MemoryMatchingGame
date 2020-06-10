@@ -49,6 +49,12 @@ class MainActivity : AppCompatActivity() {
                 if(gameResult == "WON") {
                     val intent = Intent(this@MainActivity, CongratulationsActivity::class.java)
                     startActivity(intent)
+                } else if (gameResult == "LOST") {
+                    AlertDialog.Builder(this)
+                        .setTitle("GAME LOST :(")
+                        .setMessage("You ran out of time! Better luck next time")
+                        .setNeutralButton("OK") {dialog, _ -> dialog.cancel()}
+                        .show()
                 }
             } else if (resultCode == Activity.RESULT_CANCELED){
                 val gameResult = data?.getStringExtra(GAME_RESULT)

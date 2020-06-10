@@ -5,6 +5,7 @@ class Game (cards_to_use: MutableList<Card>, mode: GameMode) {
     var matchesFound: Int = 0
     var cards: MutableList<Card> = cards_to_use
     var cardsCurrentlySelected: MutableList<Card> = ArrayList()
+    var initialTime: Int = 60
 
     enum class GameMode {
         EASY, HARD
